@@ -1,4 +1,4 @@
-name: Lint
+name: github_env
 
 on:
   push:
@@ -6,8 +6,7 @@ on:
       - '**'
 
 jobs:
-  lint:
-    name: export multiline
+  echo_multiline:
     runs-on: ubuntu-latest
     steps:
     - run: |
@@ -20,5 +19,4 @@ jobs:
       cat out.txt >> $GITHUB_ENV
       echo 'EOF' >> $GITHUB_ENV
 
-    - run: |
-      echo "${{ env.MESSAGE }}"
+    - run: echo "${{ env.MESSAGE }}"
