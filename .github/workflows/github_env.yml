@@ -1,0 +1,22 @@
+name: github_env
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  echo_multiline:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+      echo "hoge" > out.txt
+      echo "fuga" >> out.txt
+      echo 'MESSAGE<<EOF' >> $GITHUB_ENV
+      "A" >> $GITHUB_ENV
+      "B" >> $GITHUB_ENV
+      "C" >> $GITHUB_ENV
+      cat out.txt >> $GITHUB_ENV
+      echo 'EOF' >> $GITHUB_ENV
+
+    - run: echo "${{ env.MESSAGE }}"
