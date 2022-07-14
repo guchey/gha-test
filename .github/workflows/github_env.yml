@@ -18,7 +18,6 @@ jobs:
         "A" >> $GITHUB_ENV
         "B" >> $GITHUB_ENV
         "C" >> $GITHUB_ENV
-        cat out.txt >> $GITHUB_ENV
         echo 'EOF' >> $GITHUB_ENV
 
     - run: echo "${{ env.MESSAGE }}"
