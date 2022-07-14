@@ -15,9 +15,9 @@ jobs:
         echo "hoge" > out.txt
         echo "fuga" >> out.txt
         echo 'MESSAGE<<EOF' >> $GITHUB_ENV
-        "A" >> $GITHUB_ENV
-        "B" >> $GITHUB_ENV
-        "C" >> $GITHUB_ENV
+        echo "A" >> $GITHUB_ENV
+        echo "B" >> $GITHUB_ENV
+        echo "C" >> $GITHUB_ENV
         echo 'EOF' >> $GITHUB_ENV
 
     - run: echo "${{ env.MESSAGE }}"
